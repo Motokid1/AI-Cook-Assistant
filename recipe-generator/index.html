@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Recipe Generator</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <nav class="bg-green-500 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">Smart Diet & Calorie Tracker</h1>
+        <div>
+          <a href="index.html" class="mr-4 hover:text-green-200">Home</a>
+          <a href="chatbot.html" class="mr-4 hover:text-green-200">Chatbot</a>
+          <a href="diet_tracker.html" class="mr-4 hover:text-green-200"
+            >Diet Tracker</a
+          >
+
+          <a href="history.html" class="mr-4 hover:text-green-200">History</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+      <div class="max-w-3xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <h1 class="text-4xl font-bold text-gray-800 mb-2">
+            AI Recipe Generator
+          </h1>
+          <p class="text-gray-600">
+            Enter your ingredients and let AI create a delicious recipe for you!
+          </p>
+        </div>
+
+        <!-- Input Form -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <div class="mb-4">
+            <label
+              for="ingredients"
+              class="block text-gray-700 font-medium mb-2"
+            >
+              Ingredients
+            </label>
+            <input
+              type="text"
+              id="ingredients"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter ingredients (comma separated, e.g.: chicken, rice, tomatoes)"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="dietary" class="block text-gray-700 font-medium mb-2">
+              Dietary Preferences
+            </label>
+            <select
+              id="dietary"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">No specific preference</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="gluten-free">Gluten-Free</option>
+              <option value="keto">Keto</option>
+              <option value="low-carb">Low-Carb</option>
+            </select>
+          </div>
+
+          <button
+            id="generateButton"
+            class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            Generate Recipe
+          </button>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loader" class="loader"></div>
+
+        <!-- Recipe Display -->
+        <div
+          id="recipeDisplay"
+          class="recipe-card bg-white rounded-lg shadow-md p-6"
+        >
+          <!-- Recipe content will be inserted here -->
+        </div>
+
+        <!-- Error Message -->
+        <div
+          id="errorMessage"
+          class="hidden text-red-500 text-center mt-4"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/recipe-generator.js"></script>
+    <script src="scripts/ui-handler.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

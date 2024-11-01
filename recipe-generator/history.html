@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto p-6">
+      <h1 class="text-2xl font-bold mb-4">History</h1>
+      <div id="historyContent" class="space-y-4">
+        <!-- History content will be populated here -->
+      </div>
+    </div>
+
+    <script src="historyManager.js"></script>
+    <script>
+      const historyContent = document.getElementById("historyContent");
+      const historyData = HistoryManager.getHistory();
+
+      for (const module in historyData) {
+        const moduleSection = document.createElement("div");
+        moduleSection.classList.add(
+          "bg-white",
+          "p-4",
+          "rounded-lg",
+          "shadow-md"
+        );
+        moduleSection.innerHTML = `<h2 class="text-xl font-semibold">${module}</h2>`;
+
+        const moduleHistory = document.createElement("ul");
+        moduleHistory.classList.add("list-disc", "list-inside", "mt-2");
+
+        historyData[module].forEach((entry) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = `${new Date(
+            entry.timestamp
+          ).toLocaleString()} - ${entry.entry}`;
+          moduleHistory.appendChild(listItem);
+        });
+
+        moduleSection.appendChild(moduleHistory);
+        historyContent.appendChild(moduleSection);
+      }
+    </script>
+  </body>
+</html>

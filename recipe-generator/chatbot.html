@@ -1,0 +1,58 @@
+<!-- chatbot.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Chatbot</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/chatbot.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <nav class="bg-green-500 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">Smart Diet & Calorie Tracker</h1>
+        <div>
+          <a href="index.html" class="mr-4 hover:text-green-200">Home</a>
+          <a href="chatbot.html" class="mr-4 hover:text-green-200">Chatbot</a>
+          <a href="diet_tracker.html" class="mr-4 hover:text-green-200"
+            >Diet Tracker</a
+          >
+
+          <a href="history.html" class="mr-4 hover:text-green-200">History</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="chatbot bg-white rounded-lg shadow-md p-6 mb-6">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">Recipe Chatbot</h2>
+          <div
+            id="chatWindow"
+            class="overflow-y-auto h-48 border border-gray-300 p-2 mb-4"
+          ></div>
+          <div class="flex">
+            <input
+              type="text"
+              id="chatInput"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Ask me anything about cooking..."
+            />
+            <button
+              id="chatSendButton"
+              class="bg-blue-500 text-white py-2 px-4 rounded-lg ml-2 hover:bg-blue-600 transition-colors"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/chatbot.js"></script>
+  </body>
+</html>

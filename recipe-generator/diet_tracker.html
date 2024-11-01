@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Diet & Calorie Tracker</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/diet_tracker.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <nav class="bg-green-500 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">Smart Diet & Calorie Tracker</h1>
+        <div>
+          <a href="index.html" class="mr-4 hover:text-green-200">Home</a>
+          <a href="chatbot.html" class="mr-4 hover:text-green-200">Chatbot</a>
+          <a href="diet_tracker.html" class="mr-4 hover:text-green-200"
+            >Diet Tracker</a
+          >
+
+          <a href="history.html" class="mr-4 hover:text-green-200">History</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          Track Your Diet & Nutrition
+        </h2>
+
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <div class="flex space-x-2 mb-4">
+            <input
+              type="text"
+              id="foodInput"
+              class="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="Enter food item (e.g., apple, chicken breast)..."
+            />
+            <input
+              type="number"
+              id="servingsInput"
+              min="1"
+              value="1"
+              class="w-24 px-2 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="Servings"
+            />
+          </div>
+
+          <button
+            id="trackButton"
+            class="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+          >
+            Analyze Nutrition
+          </button>
+
+          <div
+            id="loadingIndicator"
+            class="hidden mt-4 text-center text-green-600"
+          >
+            Analyzing food item...
+          </div>
+
+          <div id="dietTrackerOutput" class="mt-4">
+            <!-- Nutrition results will be displayed here -->
+          </div>
+        </div>
+
+        <div class="mt-6 text-sm text-gray-600">
+          <p>
+            💡 Tip: Be specific! For best results, include details like brand or
+            preparation method.
+          </p>
+        </div>
+
+        <!-- Weekly Calorie Plan Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mt-8">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">
+            Weekly Calorie Plan
+          </h3>
+
+          <input
+            type="number"
+            id="dailyCalorieGoal"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            placeholder="Enter your daily calorie goal"
+          />
+
+          <div class="flex items-center mt-4">
+            <label class="mr-4 font-medium">Diet Preference:</label>
+            <select
+              id="dietPreference"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              <option value="vegetarian">Vegetarian</option>
+              <option value="non-vegetarian">Non-Vegetarian</option>
+            </select>
+          </div>
+
+          <input
+            type="number"
+            id="numberOfDays"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 mt-4"
+            placeholder="Number of days for the plan (e.g., 7)"
+          />
+
+          <button
+            id="generateWeeklyPlan"
+            class="w-full bg-green-500 text-white py-2 px-4 rounded-lg mt-4 hover:bg-green-600 transition-colors"
+          >
+            Generate Weekly Plan
+          </button>
+
+          <div id="weeklyPlanOutput" class="mt-4">
+            <!-- Weekly calorie plan results will be displayed here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/diet_tracker.js"></script>
+  </body>
+</html>
