@@ -479,8 +479,7 @@ class RecipeGenerator {
   }
 
   async generateRecipe(ingredients, dietary) {
-    //const apiKey = process.env.API_KEY;
-    const apiKey = "AIzaSyAOtfhqAqEkUOj8jjaYGQF0AzkEWzODY2U"; // Replace with your actual API key
+    const apiKey = "YOUR_API_KEY"; // Replace with your actual API key
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
 
     let prompt = `Create a detailed and creative recipe. `;
