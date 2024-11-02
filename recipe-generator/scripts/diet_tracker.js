@@ -1,7 +1,7 @@
 // diet_tracker.js
 
 // Gemini API Configuration
-const GEMINI_API_KEY = "AIzaSyAOtfhqAqEkUOj8jjaYGQF0AzkEWzODY2U"; // Replace with your actual key
+const GEMINI_API_KEY = "YOUR_API_KEY"; // Replace with your actual key
 const GEMINI_API_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" +
   GEMINI_API_KEY;
